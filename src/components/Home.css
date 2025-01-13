@@ -1,0 +1,195 @@
+/* src/components/Home.css */
+/* src/components/Home.css */
+/* src/components/Home.css */
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #F1F0EB;
+    /* Set background color for the Home section */
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F1F0EB;
+    /* Light beige background color */
+    padding: 0;
+    /* Remove any extra padding */
+    width: 100%;
+}
+
+
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* Padding to keep things spaced well */
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    max-width: 100%;
+    /* Ensure header doesn't exceed full width */
+    overflow: hidden;
+    /* Prevent overflow in the header */
+}
+
+/* Section Styling */
+.left-section,
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.left-section a,
+.right-section a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+    /* Corrected - kept the smaller font-size */
+    margin: 0 15px;
+    padding: 8px 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.left-section a:hover,
+.right-section a:hover {
+    color: white;
+    /* Change text color on hover */
+    background-color: #e7757f;
+    /* Change background on hover */
+}
+
+/* src/components/Home.css */
+.background {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    /* Limit max width */
+    height: 100%;
+    margin-top: 60px;
+    /* Space below the header */
+}
+
+.text-section {
+    flex: 2;
+    /* Takes up 2/3 of the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content to the top of the 2/3 height */
+    padding: 20px;
+    height: 66vh;
+    /* Ensure it takes 2/3 of the viewport height */
+}
+
+.vertical-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically center within the .vertical-text section */
+    align-items: center;
+    /* Horizontally center */
+    height: 100%;
+    /* Take up full height of the parent */
+}
+
+
+
+.quote-image {
+    width: 600%;
+    /* Adjust width of the image as needed */
+    max-width: 900px;
+    /* Max width to prevent it from being too large */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-bottom: 15px;
+    /* Space between the image and Rahul's name */
+}
+
+/* src/components/Home.css */
+.text-section h2 {
+    color: rgb(67, 13, 13);
+    /* Use !important to force the color change */
+    font-size: 1.3rem;
+    margin-top: 10px;
+    align-self: flex-end;
+    padding-right: 50px;
+}
+
+
+
+.home-image {
+    flex: 1;
+    width: 100%;
+    /* Ensure it doesn't exceed 100% width */
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    max-width: 100%;
+    /* Ensure image doesn't overflow */
+}
+
+
+/* Ensure the home page container takes full height */
+.home-container {
+    position: relative;
+    min-height: 100vh;
+    /* Full height for Home page */
+    background-color: #F1F0EB;
+    /* Light beige background */
+}
+
+
+
+
+
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Static logo at the bottom of the Home page */
+.bottom-logo-container {
+    position: absolute;
+    /* Positioned within the home-container */
+    bottom: 3%;
+    /* Position the container 3% from the bottom of the home page */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center the logo */
+    width: auto;
+    /* Make the width auto for centering */
+    height: auto;
+    z-index: 40;
+    /* Ensure it stays on top */
+    padding-bottom: 0px;
+    /* Adjust if needed */
+}
+
+/* Style for bottom logo */
+.bottom-logo {
+    width: 5%;
+    /* Keep the width at 5% */
+    height: auto;
+    /* Ensure it scales proportionally */
+    margin-bottom: 20px;
+    /* Add margin to the bottom for spacing */
+}

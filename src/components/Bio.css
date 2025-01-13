@@ -1,0 +1,142 @@
+/* General layout for the Bio container */
+.bio-container {
+    display: flex;
+    flex-direction: row;
+    /* Arrange Block 1 and Block 2 horizontally */
+    align-items: flex-start;
+    /* Align items to the top */
+    justify-content: flex-start;
+    background-color: #EDEEEF;
+    text-align: center;
+    min-height: 100vh;
+    /* Full viewport height */
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Block 1 - Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    /* Stack the profile image and social icons vertically */
+    align-items: center;
+    flex: 1;
+    /* Take 1 part of the total space */
+    height: 60vh;
+    /* 60% of the vertical height */
+    justify-content: center;
+    text-align: center;
+    margin-right: 20px;
+    /* Space between profile and introduction */
+}
+
+/* Profile Image (Big Circle) */
+.profile-image-container {
+    margin-bottom: 20px;
+    /* Space between profile image and social icons */
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    /* Circular shape */
+    object-fit: cover;
+}
+
+/* Style for the social icon buttons */
+.social-icon-btn {
+    background: none;
+    /* Remove default button styling */
+    border: none;
+    /* Remove borders */
+    cursor: pointer;
+    /* Change cursor to pointer when hovered */
+    padding: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* Remove padding */
+    /* Remove margin */
+}
+
+/* Make the icons circular */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* Optional: Add animation on hover */
+}
+
+/* Optional: Add hover effect for the icons */
+.social-icon-btn:hover .social-icon {
+    transform: scale(1.3);
+    /* Slightly enlarge on hover */
+}
+
+
+/* Block 2 - Introduction Section */
+.introduction-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align text to the left */
+    flex: 2;
+    /* Take 2 parts of the total space */
+    height: 60vh;
+    /* 60% of the vertical height */
+    padding: 20px;
+    width: 100%;
+}
+
+.introduction-section h2 {
+    font-size: 2rem;
+    color: rgb(11, 0, 0);
+    margin-bottom: 5px;
+    margin-top: 25px;
+    align-self: flex-start;
+    /* Align to the left */
+}
+
+.introduction-section h3 {
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    /* Align to the left */
+}
+
+.introduction-section p {
+    font-size: 0.8rem;
+    color: black;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.introduction-section h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+    align-self: flex-start;
+    /* Align to the left */
+}
+
+.introduction-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    font-size: 0.8px;
+}
+
+.introduction-section ul li {
+    font-size: 0.8rem;
+    color: black;
+    margin-bottom: 10px;
+    text-align: left;
+    /* Align list items to the left */
+}
