@@ -193,3 +193,8 @@ html {
     margin-bottom: 20px;
     /* Add margin to the bottom for spacing */
 }
+
+
+html {
+    scroll-behavior: smooth;
+}

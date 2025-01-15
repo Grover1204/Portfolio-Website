@@ -1,112 +1,117 @@
-/* General layout for the Bio container */
+/* The main container (.bio-container) stacks Block 3 and Block 4 vertically */
 .bio-container {
     display: flex;
-    flex-direction: row;
-    /* Arrange Block 1 and Block 2 horizontally */
-    align-items: flex-start;
-    /* Align items to the top */
-    justify-content: flex-start;
-    background-color: #EDEEEF;
-    text-align: center;
+    flex-direction: column;
     min-height: 100vh;
-    /* Full viewport height */
     width: 100%;
-    padding: 40px;
     box-sizing: border-box;
+    background-color: #EDEEEF;
+    padding: 0px;
+    /* Optional padding */
+    margin: 0;
+    /* Remove default margin if any */
+    /* text-align: center;  <-- If you have this, remove or comment it out if it interferes */
 }
 
-/* Block 1 - Profile Section */
+/* ======================
+   BLOCK 3 (row container)
+   ====================== */
+.block3 {
+    display: flex;
+    flex-direction: row;
+    /* Put Block 1 and Block 2 side by side */
+    height: 60vh;
+    /* Example: 60% of the viewport height */
+    width: 100%;
+    box-sizing: border-box;
+    /* Optional: add a background color if you like
+       background-color: #fafafa;
+    */
+}
+
+/* ========== Block 1 ========== */
 .profile-section {
     display: flex;
     flex-direction: column;
-    /* Stack the profile image and social icons vertically */
-    align-items: center;
     flex: 1;
-    /* Take 1 part of the total space */
-    height: 60vh;
-    /* 60% of the vertical height */
+    /* Takes 1 part of the horizontal space */
+    align-items: center;
     justify-content: center;
-    text-align: center;
     margin-right: 20px;
-    /* Space between profile and introduction */
+    /* Space between Block 1 and Block 2 */
+    height: 100%;
+    /* Fill the full height of .block3 */
+    box-sizing: border-box;
+    text-align: center;
+    /* Center text/images inside Block 1 only */
 }
 
-/* Profile Image (Big Circle) */
 .profile-image-container {
     margin-bottom: 20px;
-    /* Space between profile image and social icons */
 }
 
 .profile-image {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    /* Circular shape */
     object-fit: cover;
 }
 
-/* Style for the social icon buttons */
-.social-icon-btn {
-    background: none;
-    /* Remove default button styling */
-    border: none;
-    /* Remove borders */
-    cursor: pointer;
-    /* Change cursor to pointer when hovered */
-    padding: 0;
-    margin-right: 10px;
-    margin-left: 10px;
-    /* Remove padding */
-    /* Remove margin */
+/* Social icons (inside .profile-section) */
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-/* Make the icons circular */
+.social-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 10px;
+}
+
 .social-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s ease;
-    /* Optional: Add animation on hover */
 }
 
-/* Optional: Add hover effect for the icons */
 .social-icon-btn:hover .social-icon {
     transform: scale(1.3);
-    /* Slightly enlarge on hover */
 }
 
-
-/* Block 2 - Introduction Section */
+/* ========== Block 2 ========== */
 .introduction-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    /* Align text to the left */
     flex: 2;
-    /* Take 2 parts of the total space */
-    height: 60vh;
-    /* 60% of the vertical height */
-    padding: 20px;
+    /* Takes 2 parts of the horizontal space */
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    /* Fill the full height of .block3 */
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    /* Example for left-aligned text in Block 2 */
 }
 
 .introduction-section h2 {
     font-size: 2rem;
-    color: rgb(11, 0, 0);
+    color: #0b0000;
     margin-bottom: 5px;
     margin-top: 25px;
-    align-self: flex-start;
-    /* Align to the left */
 }
 
 .introduction-section h3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #333;
-    margin-bottom: 10px;
-    align-self: flex-start;
-    /* Align to the left */
+    margin: 10px 0;
 }
 
 .introduction-section p {
@@ -114,29 +119,179 @@
     color: black;
     max-width: 800px;
     margin-top: 20px;
-    text-align: left;
-    /* Align text to the left */
-}
-
-.introduction-section h3 {
-    font-size: 1rem;
-    color: #333;
-    margin-top: 10px;
-    align-self: flex-start;
-    /* Align to the left */
 }
 
 .introduction-section ul {
     list-style-type: none;
     padding-left: 0;
     margin-top: 10px;
-    font-size: 0.8px;
+    font-size: 0.8rem;
 }
 
 .introduction-section ul li {
-    font-size: 0.8rem;
-    color: black;
-    margin-bottom: 10px;
-    text-align: left;
-    /* Align list items to the left */
+    margin-bottom: 5px;
+}
+
+/* ==========================
+   BLOCK 4 (under .block3)
+   ========================== */
+/* ========== Block 4 Styles ========== */
+.block-four {
+    position: relative;
+    /* crucial for the overlay positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+    overflow: hidden;
+    min-height: 70vh;
+    /* Make the block fill the viewport height */
+    width: 100%;
+    /* ensures overlay is clipped to the container */
+
+    /* remove any existing background properties in CSS here, because you're 
+       already setting background in the inline style (in your JSX).
+       That’s fine; you can keep the inline style. */
+}
+
+.block-four::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Example: A white overlay with some transparency 
+       => Looks lighter. Try rgba(0,0,0,0.4) for a darker overlay. */
+    background-color: rgba(255, 255, 255, 0.4);
+
+    pointer-events: none;
+    /* So it doesn’t block interactions */
+    z-index: 0;
+    /* So it sits behind the text & circles */
+}
+
+/* Ensure your h3 and .circle-container appear on top of overlay */
+.block-four h3,
+.block-four .circle-container {
+    position: relative;
+    z-index: 1;
+    font-size: 26px;
+}
+
+
+/* ---------------------------------------
+   1) The circle container (unchanged)
+---------------------------------------- */
+.circle-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    /* Just for clarity, no revolve animation on the container */
+}
+
+/* ---------------------------------------
+   2) Individual Circular Boxes (Buttons)
+   (unchanged code + new lines for button-feel)
+---------------------------------------- */
+button.circle-box {
+    /* Remove default button styling */
+    appearance: none;
+    border: none;
+    outline: none;
+
+    /* Absolutely position each box at the center to start */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Make the box itself circular */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ea7f7f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+    /* Spin each box around the container’s center */
+    --offset: 0deg;
+    animation: revolve 20s linear infinite;
+
+    /* NEW: make it feel clickable */
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Keep your nth-child offsets exactly as you had them */
+button.circle-box:nth-child(1) {
+    --offset: 0deg;
+}
+
+button.circle-box:nth-child(2) {
+    --offset: 72deg;
+}
+
+button.circle-box:nth-child(3) {
+    --offset: 144deg;
+}
+
+button.circle-box:nth-child(4) {
+    --offset: 216deg;
+}
+
+button.circle-box:nth-child(5) {
+    --offset: 288deg;
+}
+
+/* The revolve keyframe remains exactly the same */
+@keyframes revolve {
+    0% {
+        transform: translate(-50%, -50%) rotate(var(--offset)) translate(100px) rotate(calc(-1 * var(--offset)));
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(calc(var(--offset) + 360deg)) translate(100px) rotate(calc(-1 * (var(--offset) + 360deg)));
+    }
+}
+
+/* ---------------------------------------
+   3) The child element for text / scaling
+---------------------------------------- */
+.circle-content {
+    /* Fill the entire button */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Smooth scale transition (like your social-icon) */
+    transition: transform 0.5s ease;
+}
+
+/* Hover effect: scale up the content */
+button.circle-box:hover .circle-content {
+    transform: scale(1.3);
+}
+
+/* Pressed (active) effect: slightly smaller than hover, 
+   to mimic a normal button press */
+button.circle-box:active .circle-content {
+    transform: scale(1.2);
+    transition: transform 0.05s ease;
+}
+
+/* Optional: Focus style when using keyboard Tab navigation */
+button.circle-box:focus {
+    outline: 1.5px dashed #333;
+    outline-offset: 1px;
+    background-color: rgb(231, 126, 21);
+    color: white;
 }

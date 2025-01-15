@@ -2,6 +2,8 @@
 import React from 'react';
 import './Home.css';  // Import CSS file for styling
 import Bio from './Bio';
+import Skill from './Skill';
+import Project from './Project';
 
 function Home() {
 
@@ -12,6 +14,13 @@ function Home() {
         }
     };
 
+    // New function to scroll to the Skills section:
+    const handleWorkClick = () => {
+        const skillSection = document.querySelector('#skills');
+        if (skillSection) {
+            skillSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className="home-container">
@@ -19,7 +28,7 @@ function Home() {
             <header className="header">
                 <div className="left-section">
                     <a href="#bio">Bio</a>
-                    <a href="#work">Work</a>
+                    <a href="#skills" onClick={handleWorkClick}>Work</a>
                 </div>
                 <div className="right-section">
                     <a href="#contact">Contact</a>
@@ -39,30 +48,20 @@ function Home() {
                 src="/logo.png"  // Replace with your image path
                 alt="Bottom Logo"
                 className="bottom-logo"
-                onClick={handleLogoClick}  // Trigger the scroll and hide logo on click
+                onClick={handleLogoClick}  // Trigger the scroll to Bio section
                 style={{ cursor: 'pointer' }}  // Ensure it's clickable
             />
 
-
             {/* Bio section */}
             <Bio />
+
+            {/* Render the Skill section */}
+            <Skill />
+
+            {/* Project Section */}
+            <Project />
         </div>
     );
 }
 
 export default Home;
-
-
-
-
-
-
-
-
-//       {/* Scroll down logo */}
-//       <img
-//       src="/logo.png"
-//       alt="Scroll down"
-//       className="scroll-logo"
-//       onClick={handleScroll}  // Add the scroll functionality on click
-//   />

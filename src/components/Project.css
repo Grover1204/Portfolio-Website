@@ -1,0 +1,140 @@
+/* src/components/Project.css */
+
+/* Overall container styling */
+.project-container {
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Project List - 3 Boxes in a Row */
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Individual Project Box Styling */
+.project-item {
+    flex: 0 1 calc(33.33% - 20px);
+    /* Each box takes 1/3rd of the row */
+    max-width: 300px;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid #946969;
+    border-radius: 10px;
+    box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
+    background-color: rgb(232, 232, 215);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== Popup Modal Styling ========== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Scrollable Popup Box with Defined Height */
+.popup-box {
+    padding: 30px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 900px;
+    max-height: 90vh;
+    /* Set max height to 90% of viewport height */
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds the box height */
+    text-align: center;
+    position: relative;
+    border: 1px solid black;
+}
+
+/* Close Button in the Top-Right Corner */
+.close-button-top-right {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.close-button-top-right:hover {
+    background: black;
+    color: white;
+}
+
+/* Image Styling */
+.popup-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin: 15px auto;
+    display: block;
+}
+
+/* GitHub Link Styling */
+.github-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4e2a84;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+    color: #371a60;
+}
+
+/* Primary Button Styling */
+.primary-button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.primary-button:hover {
+    background: #4e2a84;
+    color: white;
+    transform: scale(1.1);
+}

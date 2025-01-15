@@ -1,0 +1,106 @@
+/* src/components/Skill.css */
+
+/* Overall container for the Skill page */
+.skill-container {
+    position: relative;
+    background: url('/public/skill_background.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+.skill-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.skill-container h4 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Big container with three blocks arranged in a row */
+.skills-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Additional styling for the second container */
+.skills-list.second-container {
+    margin-top: 50px;
+    /* Adjust spacing between the two containers */
+}
+
+/* Individual skill block styling */
+.skill-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    max-width: 400px;
+    min-height: 500px;
+}
+
+.skill-item h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.skill-item p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+
+/* Container for the circular blue box */
+.skill-image-container {
+    width: 120px;
+    /* Adjust width as needed */
+    height: 120px;
+    /* Adjust height as needed */
+    background-color: rgb(234, 195, 136);
+    /* Blue background (you can change to your preferred shade, e.g., #007BFF) */
+    border-radius: 50%;
+    /* Makes it circular */
+    display: flex;
+    /* Use flex to center the image */
+    align-items: center;
+    /* Vertically center the image */
+    justify-content: center;
+    /* Horizontally center the image */
+    margin: 0 auto 10px;
+    /* Center the container and add bottom margin */
+}
+
+/* Style for the image inside the circular container */
+.skill-image {
+    width: 80%;
+    /* Scale the image within the container */
+    height: 80%;
+    /* Scale the image within the container */
+    object-fit: contain;
+    /* Contain the image so it doesn't stretch */
+    border-radius: 50%;
+    /* Optional: if you want the image itself circular */
+}
+
+
+/* Add a smooth transition for the transform property */
+.skill-item {
+    transition: transform 0.5s ease-in-out;
+}
+
+/* On hover, move the container up slightly */
+.skill-item:hover {
+    transform: translateY(-20px);
+}
